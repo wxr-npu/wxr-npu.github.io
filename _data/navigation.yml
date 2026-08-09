@@ -6,10 +6,19 @@
 #
 # NOTE that only one of the CV options should be selected, the first is for the
 #      Markdown formatted page while the second is generated using JSON.
+# 以下是网站头部链接的顺序。
+#
+# 在这里改变顺序会调整链接的显示顺序，你也可以添加额外的链接。
+# 删除链接会让它不在头部显示，但不会阻止它被包含在网站中。
+#
+# 注意：CV 选项只能选择一个，第一个是用于 Markdown 格式页面，第二个是通过 JSON 生成的。
 
 main:
-  - title: "Publications"
+  - title: "项目详细信息"
     url: /publications/
+
+  - title: "博客"
+    url: /blog/
 
   - title: "Talks"
     url: /talks/    
@@ -20,9 +29,6 @@ main:
   - title: "Portfolio"
     url: /portfolio/
         
-  - title: "Blog Posts"
-    url: /year-archive/
-    
   - title: "CV"
     url: /cv/
     
@@ -31,3 +37,11 @@ main:
     
   - title: "Guide"
     url: /markdown/
+
+  - title: "terms"
+    url: /terms/
+
+
+
+  - title: "md模版"
+    url: /archive-layout-with-content/

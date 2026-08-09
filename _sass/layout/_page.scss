@@ -1,7 +1,9 @@
 /* ==========================================================================
-   SINGLE PAGE/POST
+   单篇文章 / 页面样式
+   这里控制文章页、页面页的整体布局和正文样式。
    ========================================================================== */
 
+/* 主内容区域：文章正文和页面内容的整体容器 */
 #main {
   @include container;
   @include clearfix;
@@ -16,6 +18,7 @@
   }
 }
 
+/* 页面布局：定义正文内容的宽度和左右留白 */
 .page {
   @include breakpoint($large) {
     @include span(10 of 12 last);
@@ -34,6 +37,7 @@
   }
 }
 
+/* 页面标题样式 */
 .page__title {
   margin-top: 0;
   line-height: 1;
@@ -43,16 +47,18 @@
   }
 }
 
+/* 页面简介（lead）样式 */
 .page__lead {
   font-family: $global-font-family;
   font-size: $type-size-4;
 }
 
+/* 正文内容区：标题、段落、链接、列表、引用等 */
 .page__content {
 
   h2 {
     padding-bottom: 0.5em;
-    border-bottom: 1px solid var(--global-border-color);
+    border-bottom: none;
   }
 
   p, li, dl {
@@ -107,6 +113,7 @@
   }
 }
 
+/* 页面顶部英雄区域：可用于封面图、标题、简介等 */
 .page__hero {
   position: relative;
   margin-bottom: 2em;
@@ -160,12 +167,14 @@
   }
 }
 
+/* 页面顶部图片样式 */
 .page__hero-image {
   width: 100%;
   height: auto;
   -ms-interpolation-mode: bicubic;
 }
 
+/* 页面顶部图片说明文字样式 */
 .page__hero-caption {
   position: absolute;
   bottom: 0;
@@ -191,40 +200,42 @@
   }
 }
 
+// /*
+//    社交分享
+//    ========================================================================== */
+
+// /* 页面底部分享按钮区域 */
+// .page__share {
+//   margin-top: 2em;
+//   padding-top: 1em;
+//   border-top: 1px solid var(--global-border-color);
+
+//   @include breakpoint(max-width $small) {
+//     .btn span {
+//       border: 0;
+//       clip: rect(0 0 0 0);
+//       height: 1px;
+//       margin: -1px;
+//       overflow: hidden;
+//       padding: 0;
+//       position: absolute;
+//       width: 1px;
+//     }
+//   }
+// }
+
+// .page__share-title {
+//   margin-bottom: 10px;
+//   font-size: $type-size-6;
+//   text-transform: uppercase;
+// }
+
+
 /*
-   Social sharing
+   页面元信息
    ========================================================================== */
 
-.page__share {
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid var(--global-border-color);
-
-  @include breakpoint(max-width $small) {
-    .btn span {
-      border: 0;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-  }
-}
-
-.page__share-title {
-  margin-bottom: 10px;
-  font-size: $type-size-6;
-  text-transform: uppercase;
-}
-
-
-/*
-   Page meta
-   ========================================================================== */
-
+/* 发布日期、阅读时间、作者信息等的样式 */
 .page__meta {
   margin-top: 2em;
   color: var(--global-text-color-light);
@@ -248,9 +259,10 @@
 
 
 /*
-   Page taxonomy
+   页面分类/标签区域
    ========================================================================== */
 
+/* 标签、分类等展示样式 */
 .page__taxonomy {
   .sep {
     display: none;
@@ -277,106 +289,108 @@
 }
 
 
+// /*
+//    评论区
+//    ========================================================================== */
+
+// /* 评论模块整体布局 */
+// .page__comments {
+//   @include full();
+// }
+
+// .page__comments-title {
+//   margin-top: 2rem;
+//   margin-bottom: 10px;
+//   padding-top: 2rem;
+//   font-size: $type-size-6;
+//   border-top: 1px solid var(--global-border-color);
+//   text-transform: uppercase;
+// }
+
+// .page__comments-form {
+//   padding: 1em;
+//   background: var(--global-border-color);
+//   transition: $global-transition;
+
+//   &.disabled {
+//     input,
+//     button,
+//     textarea,
+//     label {
+//       pointer-events: none;
+//       cursor: not-allowed;
+//       filter: alpha(opacity=65);
+//       box-shadow: none;
+//       opacity: 0.65;
+//     }
+//   }
+// }
+
+// .comment {
+//   @include clearfix();
+//   margin: 1em 0;
+
+//   &:not(:last-child) {
+//     border-bottom: 1px solid var(--global-border-color);
+//   }
+// }
+
+// .comment__avatar-wrapper {
+//   float: left;
+//   width: 60px;
+//   height: 60px;
+
+//   @include breakpoint($large) {
+//     width: 100px;
+//     height: 100px;
+//   }
+// }
+
+// .comment__avatar {
+//   width: 40px;
+//   height: 40px;
+//   border-radius: 50%;
+
+//   @include breakpoint($large) {
+//     width: 80px;
+//     height: 80px;
+//     padding: 5px;
+//     border: 1px solid var(--global-border-color);
+//   }
+// }
+
+// .comment__content-wrapper {
+//   float: right;
+//   width: calc(100% - 60px);
+
+//   @include breakpoint($large) {
+//     width: calc(100% - 100px);
+//   }
+// }
+
+// .comment__author {
+//   margin: 0;
+
+//   a {
+//     text-decoration: none;
+//   }
+// }
+
+// .comment__date {
+//   @extend .page__meta;
+//   margin: 0;
+
+//   a {
+//     text-decoration: none;
+//   }
+// }
+
+
 /*
-   Comments
+   相关文章区域
    ========================================================================== */
 
-.page__comments {
-  @include full();
-}
-
-.page__comments-title {
-  margin-top: 2rem;
-  margin-bottom: 10px;
-  padding-top: 2rem;
-  font-size: $type-size-6;
-  border-top: 1px solid var(--global-border-color);
-  text-transform: uppercase;
-}
-
-.page__comments-form {
-  padding: 1em;
-  background: var(--global-border-color);
-  transition: $global-transition;
-
-  &.disabled {
-    input,
-    button,
-    textarea,
-    label {
-      pointer-events: none;
-      cursor: not-allowed;
-      filter: alpha(opacity=65);
-      box-shadow: none;
-      opacity: 0.65;
-    }
-  }
-}
-
-.comment {
-  @include clearfix();
-  margin: 1em 0;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid var(--global-border-color);
-  }
-}
-
-.comment__avatar-wrapper {
-  float: left;
-  width: 60px;
-  height: 60px;
-
-  @include breakpoint($large) {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-.comment__avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-
-  @include breakpoint($large) {
-    width: 80px;
-    height: 80px;
-    padding: 5px;
-    border: 1px solid var(--global-border-color);
-  }
-}
-
-.comment__content-wrapper {
-  float: right;
-  width: calc(100% - 60px);
-
-  @include breakpoint($large) {
-    width: calc(100% - 100px);
-  }
-}
-
-.comment__author {
-  margin: 0;
-
-  a {
-    text-decoration: none;
-  }
-}
-
-.comment__date {
-  @extend .page__meta;
-  margin: 0;
-
-  a {
-    text-decoration: none;
-  }
-}
-
-
-/*
-   Related
-   ========================================================================== */
-
+/* 页面底部相关内容推荐区 */
 .page__related {
   margin-top: 2em;
   padding-top: 1em;

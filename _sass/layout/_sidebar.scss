@@ -64,15 +64,17 @@
   margin-bottom: 1em;
 
   @include breakpoint($large) {
-    position: relative;
-    float: right;
-    width: $right-sidebar-width-narrow;
-    margin-left: span(0.5 of 12);
+    position: fixed;
+    top: calc(#{$masthead-height} + 1rem);
+    right: 1rem;
+    width: clamp(16rem, 18vw, 22rem);
     z-index: 10;
+    max-height: calc(100vh - #{$masthead-height} - 2rem);
+    overflow-y: auto;
   }
 
   @include breakpoint($x-large) {
-    width: $right-sidebar-width;
+    width: clamp(17rem, 16vw, 24rem);
   }
 }
 
@@ -103,6 +105,10 @@
     list-style: none;
     font-size: $type-size-6;
 
+    li {
+      list-style: none;
+    }
+
     a {
       display: block;
       padding: 0.25rem 0;
@@ -119,6 +125,31 @@
 
     > li > a {
       font-weight: bold;
+    }
+
+    .toc__item--h2 > a {
+      padding-left: 1rem;
+      font-weight: normal;
+    }
+
+    .toc__item--h3 > a {
+      padding-left: 2rem;
+      font-weight: normal;
+    }
+
+    .toc__item--h4 > a {
+      padding-left: 3rem;
+      font-weight: normal;
+    }
+
+    .toc__item--h5 > a {
+      padding-left: 4rem;
+      font-weight: normal;
+    }
+
+    .toc__item--h6 > a {
+      padding-left: 5rem;
+      font-weight: normal;
     }
 
     li ul > li a {

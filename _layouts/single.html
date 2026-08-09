@@ -83,8 +83,6 @@ layout: default
         {% include page__taxonomy.html %}
       </footer>
 
-      {% if page.share %}{% include social-share.html %}{% endif %}
-
       {% include post_pagination.html %}
     </div>
 
@@ -92,6 +90,10 @@ layout: default
       {% include comments.html %}
     {% endif %}
   </article>
+
+  {% if page.toc %}
+    {% include toc %}
+  {% endif %}
 
   {% comment %}<!-- only show related on a post page when not disabled -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}

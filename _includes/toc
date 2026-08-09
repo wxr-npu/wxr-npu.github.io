@@ -1,7 +1,61 @@
-<aside class="sidebar__right">
-<nav class="toc" markdown="1">
+<aside class="sidebar__right" aria-label="{{ include.title | default: site.data.ui-text[site.locale].toc_label }}" style="width: clamp(16rem, 18vw, 22rem);">
+<nav class="toc js-toc">
 <header><h4 class="nav__title"><i class="fa fa-{{ include.icon | default: 'file-text' }}"></i> {{ include.title | default: site.data.ui-text[site.locale].toc_label }}</h4></header>
-*  Auto generated table of contents
-{:toc .toc__menu}
+<ul class="toc__menu js-toc-menu"></ul>
 </nav>
-</aside>
+<script>
+(function () {
+	var root = document.currentScript && document.currentScript.previousElementSibling;
+
+	function buildToc() {
+		if (!root) {
+			return false;
+		}
+
+		var content = document.querySelector('.page__content');
+		var menu = root.querySelector('.js-toc-menu');
+		if (!content || !menu) {
+			return false;
+		}
+
+		var headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+		if (!headings.length) {
+			root.style.display = 'none';
+			return true;
+		}
+
+		menu.innerHTML = '';
+		headings.forEach(function (heading) {
+			if (!heading.id) {
+				return;
+			}
+
+			var item = document.createElement('li');
+			item.className = 'toc__item toc__item--' + heading.tagName.toLowerCase();
+
+			var link = document.createElement('a');
+			link.href = '#' + heading.id;
+			link.textContent = heading.textContent;
+
+			item.appendChild(link);
+			menu.appendChild(item);
+		});
+
+		if (!menu.children.length) {
+			root.style.display = 'none';
+		}
+
+		return true;
+	}
+
+	var attempts = 0;
+	(function tryBuild() {
+		if (buildToc() || attempts >= 40) {
+			return;
+		}
+
+		attempts += 1;
+		window.setTimeout(tryBuild, 50);
+	})();
+})();
+</script>
