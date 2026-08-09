@@ -18,6 +18,7 @@ bundle exec jekyll serve -l -H localhost
 ```
 然后在浏览器打开 http://localhost:4000
 
+在线访问：https://wxr-npu.github.io
 
 在终端中按 `Ctrl+C` 停止服务。
 
@@ -44,25 +45,15 @@ bundle exec jekyll serve -l -H localhost
 首页信息
 
 # _pages/blog.html
----
+
 layout: archive-----------------归档页布局，也就是页面会按列表方式显示文章。
 permalink: /year-archive/-------导航里写的链接。
 title: "博客页"------------------页面标题，打开这个页面时顶部显示的名字。
 author_profile: true------------左侧显示作者信息卡片。
 redirect_from:------------------旧链接跳转到这个页面，方便兼容以前的网址。
   - /wordpress/blog-posts/
----
 
-{% include base_path %}----------------------------------------------------把站点的基础路径引入进来，方便后面生成链接时路径正确
-{% capture written_year %}'None'{% endcapture %}---------------------------先创建一个变量 written_year，初始值设成 None。它的用途是记录“上一篇文章显示的年份”。
-{% for post in site.posts %}-----------------------------------------------把你站点里所有博客文章都遍历出来。
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}--------------这行从当前文章的日期里提取年份，例如 2026、2025，并保存到 year 变量里。
-  {% if year != written_year %}-------------------------------------------这一段：如果年份变了，就先显示一个年份标题，比如 2026、2025。
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>---这行会输出一个二级标题，内容就是年份本身，比如 2026。
-    {% capture written_year %}{{ year }}{% endcapture %}
-  {% endif %}
-  {% include archive-single.html %}---------------------------------------每一篇文章用统一的卡片样式展示出来。
-{% endfor %}
+
 
 # _posts
 博客内容页
@@ -74,6 +65,10 @@ redirect_from:------------------旧链接跳转到这个页面，方便兼容以
 发布日期和其他元数据（已被注释掉）：原来显示"Published: August 06, 2026"
 文章摘要：显示文章的预览文字
 下载链接（论文相关）：显示论文、幻灯片、引用信息等链接
+# _includes/author-profile.html
+作者卡片模板，模板支持社交字段，可在里面添加CSDN
+
+
 
 # _sass/layout/_page.scss
 决定md文件的页面渲染效果

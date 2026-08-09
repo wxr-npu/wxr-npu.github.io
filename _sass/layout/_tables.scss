@@ -1,38 +1,47 @@
 /* ==========================================================================
    TABLES
+   表格样式说明：
+   - 这里定义全站文章、页面中 Markdown 表格的统一显示样式
+   - 主要控制表格的边框、表头背景、单元格内边距和对齐方式
    ========================================================================== */
 
+/* 基础表格样式 */
 table {
-  margin-bottom: 1em;
-  width: 100%;
-  font-family: $global-font-family;
-  font-size: $type-size-6;
-  border-collapse: collapse;
-  border: 1px solid var(--global-border-color);
+  margin-bottom: 1em; /* 表格下方留出一点间距，避免与后文内容贴得太近 */
+  width: 100%; /* 让表格自动撑满容器宽度 */
+  font-family: $global-font-family; /* 继承全站的字体样式 */
+  font-size: $type-size-6; /* 使用统一的字体大小 */
+  border-collapse: collapse; /* 合并边框，视觉上更整齐 */
+  border: 1px solid var(--global-border-color); /* 表格整体边框颜色 */
 
+  /* 相邻表格之间增加上边距，避免排版过于紧凑 */
   & + table {
     margin-top: 1em;
   }
 }
 
+/* 表头样式 */
 thead {
-  background-color: var(--global-border-color);
-  border-bottom: 1px solid var(--global-border-color);
+  background-color: #808080; /* 表头背景色，使用主题变量var(--global-border-color) */
+  border-bottom: 1px solid var(--global-border-color); /* 表头下边框 */
 }
 
+/* 表头单元格样式 */
 th {
-  padding: 0.5em;
-  font-weight: bold;
-  text-align: left;
-  border-right: 1px solid var(--global-border-color);
+  padding: 0.5em; /* 表头内容与边框之间的留白 */
+  font-weight: bold; /* 表头文字加粗，增强层次感 */
+  text-align: left; /* 默认左对齐，适合中文内容 */
+  border-right: 1px solid var(--global-border-color); /* 每个表头单元格之间的分隔线 */
 }
 
+/* 表格正文单元格样式 */
 td {
-  padding: 0.5em;
-  border-bottom: 1px solid var(--global-border-color);
-  border-right: 1px solid var(--global-border-color);
+  padding: 0.5em; /* 单元格内容与边框的间距 */
+  border-bottom: 1px solid var(--global-border-color); /* 每行之间的横向分隔线 */
+  border-right: 1px solid var(--global-border-color); /* 每列之间的竖向分隔线 */
 }
 
+/* 统一表格内容垂直居中 */
 tr, td, th {
   vertical-align: middle;
 }

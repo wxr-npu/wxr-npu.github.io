@@ -36,6 +36,15 @@
       {% if author.email %}
         <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
       {% endif %}
+      {% if author.phone %}
+        <li><i class="fas fa-fw fa-phone icon-pad-right" aria-hidden="true"></i>{{ author.phone }}</li>
+      {% endif %}
+      {% if author.birthday %}
+        <li><i class="fas fa-fw fa-cake-candles icon-pad-right" aria-hidden="true"></i>{{ author.birthday }}</li>
+      {% endif %}
+      {% if author.politics %}
+        <li><i class="fas fa-fw fa-users icon-pad-right" aria-hidden="true"></i>{{ author.politics }}</li>
+      {% endif %}
 
       <!-- Font Awesome and Academicons icons / Academic websites -->
       {% if author.academia %}
@@ -87,6 +96,9 @@
       {% endif %}      
       {% if author.github %}
         <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i>GitHub</a></li>
+      {% endif %}
+      {% if author.CSDN or author.csdn %}
+        <li><a href="{% if author.CSDN %}{{ author.CSDN }}{% else %}{{ author.csdn }}{% endif %}"><i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"></i>CSDN</a></li>
       {% endif %}
       {% if author.kaggle %}
         <li><a href="https://kaggle.com/{{ author.kaggle }}"><i class="fab fa-fw fa-kaggle icon-pad-right" aria-hidden="true"></i>Kaggle</a></li>

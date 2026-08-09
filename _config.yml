@@ -24,8 +24,11 @@ author:
   bio              : "西工大研二在读"  # 个人简介（显示在头像下方）
   location         : "陕西-西安"  # 位置/城市
   employer         : "西北工业大学"  # 工作单位/公司
-  uri              : # 个人网站 URL
+  uri              : 
   email            : "2268715051@qq.com"  # 邮箱地址 
+  phone            : "15613570722"  # 手机号
+  birthday         : "2002.07.25"  # 出生日期
+  politics         : "中共党员"  # 政治面貌
 
   # 学术网站
   academia         : # Academia.edu 主页 URL
@@ -76,7 +79,7 @@ author:
   xing             : # XING 用户名（职业社交网络）
   youtube          : # YouTube 频道名称
   zhihu            : # 知乎 用户名
-  CSDN             : "波特率115200"  
+  CSDN             : https://blog.csdn.net/wxr2268715051?spm=1011.2124.3001.5343 
 
 # ========== 发布物分类 ==========
 # 定义论文/发布物的分类和显示标题

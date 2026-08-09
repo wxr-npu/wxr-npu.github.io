@@ -14,34 +14,34 @@
 # 注意：CV 选项只能选择一个，第一个是用于 Markdown 格式页面，第二个是通过 JSON 生成的。
 
 main:
-  - title: "项目详细信息"
-    url: /publications/
+  # - title: "项目详细信息"
+  #   url: /publications/
 
   - title: "博客"
     url: /blog/
 
-  - title: "Talks"
-    url: /talks/    
+  # - title: "Talks"
+  #   url: /talks/    
 
-  - title: "Teaching"
-    url: /teaching/    
+  # - title: "Teaching"
+  #   url: /teaching/    
     
-  - title: "Portfolio"
-    url: /portfolio/
+  # - title: "Portfolio"
+  #   url: /portfolio/
         
-  - title: "CV"
-    url: /cv/
+  # - title: "CV"
+  #   url: /cv/
     
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "Guide"
-    url: /markdown/
+  # - title: "Guide"
+  #   url: /markdown/
 
-  - title: "terms"
-    url: /terms/
+  # - title: "terms"
+  #   url: /terms/
 
 
 
-  - title: "md模版"
-    url: /archive-layout-with-content/
+  # - title: "md模版"
+  #   url: /archive-layout-with-content/
