@@ -53,6 +53,8 @@ author_profile: true------------左侧显示作者信息卡片。
 redirect_from:------------------旧链接跳转到这个页面，方便兼容以前的网址。
   - /wordpress/blog-posts/
 
+# _pages/tag-archive.html
+按照tags排序的博客页
 
 
 # _posts
@@ -88,5 +90,5 @@ redirect_from:------------------旧链接跳转到这个页面，方便兼容以
 添加图片效果
 ![Editing a Markdown file for a talk](/images/editing-talk.png)
 
-
-
+## 行内公式正确渲染
+CSDN上使用$公式$，但在这里需要使用\\(公式\\)的格式来渲染行内公式。

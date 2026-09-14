@@ -20,6 +20,12 @@ main:
   - title: "博客"
     url: /blog/
 
+  - title: "汇总"
+    url: /tags/
+
+  # - title: "terms"
+  #   url: /terms/
+
   # - title: "Talks"
   #   url: /talks/    
 
@@ -40,8 +46,6 @@ main:
 
   # - title: "terms"
   #   url: /terms/
-
-
 
   # - title: "md模版"
   #   url: /archive-layout-with-content/
