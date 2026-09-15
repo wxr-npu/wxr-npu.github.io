@@ -6,6 +6,7 @@ https://jayrobwilliams.com/posts/2020/06/academic-website/
 
 ## 安装依赖
 ```bash
+sudo apt install ruby-bundler
 bundle config set --local force_ruby_platform true
 sudo apt install ruby-dev ruby-bundler nodejs build-essential gcc make
 bundle install
